@@ -1,5 +1,5 @@
 {
-    "name": "zakirullin/csrf-middleware",
+    "name": "zakirullin/conditional-middleware",
     "description": "PSR-15 middleware that makes it possible to add conditional middlewares, based on request",
     "type": "library",
     "license": "MIT",
