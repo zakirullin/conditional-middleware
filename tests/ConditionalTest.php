@@ -12,12 +12,15 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 /**
  * Class ConditionalTest
+ *
  * @package Tests
  */
 class ConditionalTest extends TestCase
 {
     /**
      * @covers \Zakirullin\Middlewares\Conditional::process()
+     * @covers \Zakirullin\Middlewares\Conditional::__construct
+     * @covers \Zakirullin\Middlewares\Conditional::createMiddlewareFromClosure
      */
     public function testUse()
     {
@@ -54,6 +57,8 @@ class ConditionalTest extends TestCase
 
     /**
      * @covers \Zakirullin\Middlewares\Conditional::process()
+     * @covers \Zakirullin\Middlewares\Conditional::__construct
+     * @covers \Zakirullin\Middlewares\Conditional::createMiddlewareFromClosure
      */
     public function testDontUse()
     {
