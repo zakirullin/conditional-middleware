@@ -36,7 +36,11 @@ class ConditionalTest extends TestCase
             }
         );
 
+<<<<<<< HEAD
         $request = Factory::createServerRequest('GET', '/');
+=======
+        $request = Factory::createServerRequest('get', '/test');
+>>>>>>> fix tests
         $appMiddleware = function (ServerRequestInterface $request, RequestHandlerInterface $handler) {
             $response = Factory::createResponse();
             $response->getBody()->write('success');
@@ -76,7 +80,11 @@ class ConditionalTest extends TestCase
             }
         );
 
+<<<<<<< HEAD
         $request = Factory::createServerRequest('GET', '/');
+=======
+        $request = Factory::createServerRequest('get', '/test');
+>>>>>>> fix tests
         $appMiddleware = function (ServerRequestInterface $request, RequestHandlerInterface $handler) {
             $response = Factory::createResponse();
             $response->getBody()->write('success');
