@@ -10,6 +10,10 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
+/**
+ * Class ConditionalTest
+ * @package Tests
+ */
 class ConditionalTest extends TestCase
 {
     /**
@@ -29,7 +33,7 @@ class ConditionalTest extends TestCase
             }
         );
 
-        $request = Factory::createServerRequest();
+        $request = Factory::createServerRequest('GET', '/');
         $appMiddleware = function (ServerRequestInterface $request, RequestHandlerInterface $handler) {
             $response = Factory::createResponse();
             $response->getBody()->write('success');
@@ -45,7 +49,7 @@ class ConditionalTest extends TestCase
             $request
         );
 
-        $this->assertEquals((string)$response->getBody(), 'success');
+        self::assertEquals((string)$response->getBody(), 'success');
     }
 
     /**
@@ -54,7 +58,7 @@ class ConditionalTest extends TestCase
     public function testDontUse()
     {
         $assertMiddleware = function (ServerRequestInterface $request, RequestHandlerInterface $handler) {
-            $this->assertTrue(false);
+            self::assertTrue(false);
 
             return $handler->handle($request);
         };
@@ -67,7 +71,7 @@ class ConditionalTest extends TestCase
             }
         );
 
-        $request = Factory::createServerRequest();
+        $request = Factory::createServerRequest('GET', '/');
         $appMiddleware = function (ServerRequestInterface $request, RequestHandlerInterface $handler) {
             $response = Factory::createResponse();
             $response->getBody()->write('success');
@@ -83,6 +87,6 @@ class ConditionalTest extends TestCase
             $request
         );
 
-        $this->assertEquals((string)$response->getBody(), 'success');
+        self::assertEquals((string)$response->getBody(), 'success');
     }
 }

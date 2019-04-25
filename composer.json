@@ -33,9 +33,13 @@
     "autoload": {
         "psr-4": {
             "Zakirullin\\Middlewares\\": "src/",
-            "Zakirullin\\Middlewares\\Tests\\": "tests/"
         }
     },
+  "autoload-dev": {
+    "psr-4": {
+      "Zakirullin\\Middlewares\\Tests\\": "tests/"
+    }
+  },
     "scripts": {
         "test": [
             "phpunit --stderr --coverage-text"
